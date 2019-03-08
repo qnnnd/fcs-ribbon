@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: application-fcs-ribbon
+  cloud:
+    config:
+      #ENV_CONFIG_IP、ENV_CONFIG_PORT、ENV_TYPE获取的是系统变量，变量无法获取时，采用默认值
+      uri: http://${ENV_CONFIG_IP:localhost}:${ENV_CONFIG_PORT:10004}
+      profile: ${ENV_TYPE:dev}
+      label: master

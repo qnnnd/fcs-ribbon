@@ -1,0 +1,21 @@
+server:
+  #服务端口号
+  port: 10005
+spring:
+  application:
+    #可以指定微服务的名称后续在调用的时候只需要使用该名称就可以进行服务的访问
+    name: fcs-ribbon
+eureka:
+  client:
+    serviceUrl:
+      #属性对应服务注册中心的配置内容，指定服务注册中心的位置
+      defaultZone: http://localhost:10003/eureka/
+      #表示eureka client间隔多久去拉取服务器注册信息,默认为30秒
+      registry-fetch-interval-seconds: 3
+  instance:
+    #eureka客户端需要多长时间发送心跳给eureka服务器，表明他仍然或者，默认30秒
+    lease-renewal-interval-in-seconds: 5
+    #eureka服务器在接受到实例的最后一次发出的心跳后，需要等待多久才可以将此实力删除
+    lease-expiration-duration-in-seconds: 10
+    #是否使用IP注册
+    prefer-ip-address: true
