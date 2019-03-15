@@ -15,7 +15,7 @@ public class RibbonController {
 
     @GetMapping("/test")
     public String test() {
-        String result = restTemplate.getForObject("http://fcs-serverone/fcs/serverone/test", String.class);
+        String result = restTemplate.getForObject("http://fcs-serverone/serverone/ribbon", String.class);
         System.out.println(result);
         return result;
     }
